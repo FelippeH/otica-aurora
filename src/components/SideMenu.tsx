@@ -1,66 +1,52 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 
-export default function SideMenu() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+type SideMenuProps = {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+};
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
+export default function SideMenu({ isOpen, setIsOpen }: SideMenuProps) {
   return (
-    <div className="relative">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="p2 text-white rounded-md"
-      >
-        {/* botão para abrir o menu vertical*/}
-        <Menu size={28} />
-      </button>
-
-      {/* Overlay para fechar clicando fora */}
+    <>
+      {/* Overlay escuro no mobile */}
       {isOpen && (
         <div
           onClick={() => setIsOpen(false)}
-          className="fixed inset-0 bg-neutral-900/50 z-40"
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
         />
       )}
 
+      {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-74 bg-navbar shadow-lg z-50
-          transform transition-transform duration-300
-          ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+        className={`fixed top-0 left-0 h-full w-68 bg-navbar shadow-lg z-50
+    transform transition-transform duration-300
+    ${isOpen ? "translate-x-0" : "-translate-x-full"}
+    md:hidden`} // <- importante, esconde no desktop
       >
-        {/* botão de fechar o menu */}
+        {/* Botão fechar */}
         <div className="flex justify-end p-4">
-          <button
-            onClick={() => setIsOpen(false)}
-            className="text-white absolute m-4"
-          >
-            <X size={32} />
+          <button onClick={() => setIsOpen(false)} className="text-black">
+            <X size={28} />
           </button>
         </div>
 
-        <nav className="flex flex-col p-4 mt-10 space-y-4">
-          <a href="#" className="hover:text-blue-600">
+        <nav className="flex flex-col p-4 space-y-4">
+          <a href="#" className="hover:text-blue-400 text-black">
             Óculos de Grau
           </a>
-          <a href="#" className="hover:text-blue-600">
+          <a href="#" className="hover:text-blue-400 text-black">
             Óculos de Sol
           </a>
-          <a href="#" className="hover:text-blue-600">
+          <a href="#" className="hover:text-blue-400 text-black">
             Lentes de Contato
           </a>
-          <a href="#" className="hover:text-blue-600">
+          <a href="#" className="hover:text-blue-400 text-black">
             Acessórios
           </a>
         </nav>
       </div>
-    </div>
+    </>
   );
 }
