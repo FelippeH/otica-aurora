@@ -8,9 +8,10 @@ type SideMenuProps = {
 };
 
 export default function SideMenu({ isOpen, setIsOpen }: SideMenuProps) {
+  // Menu lateral para navegação mobile
   return (
     <>
-      {/* Overlay escuro no mobile */}
+      {/* Overlay escuro no mobile. Única função. */}
       {isOpen && (
         <div
           onClick={() => setIsOpen(false)}
@@ -18,31 +19,32 @@ export default function SideMenu({ isOpen, setIsOpen }: SideMenuProps) {
         />
       )}
 
-      {/* Sidebar */}
+      {/* Sidebar lateral */}
       <div
         className={`fixed top-0 left-0 h-full w-68 bg-navbar shadow-lg z-50
     transform transition-transform duration-300
     ${isOpen ? "translate-x-0" : "-translate-x-full"}
-    md:hidden`} // <- importante, esconde no desktop
+    md:hidden`}
       >
-        {/* Botão fechar */}
-        <div className="flex justify-end p-4">
+        {/* Botão para fechar o sidebar */}
+        <div className="flex justify-end p-5">
           <button onClick={() => setIsOpen(false)} className="text-black">
-            <X size={28} />
+            <X size={32} />
           </button>
         </div>
 
+        {/* Links de navegação do sidebar */}
         <nav className="flex flex-col p-4 space-y-4">
-          <a href="#" className="hover:text-blue-400 text-black">
+          <a href="#" className="hover:text-gray-400 text-black">
             Óculos de Grau
           </a>
-          <a href="#" className="hover:text-blue-400 text-black">
+          <a href="#" className="hover:text-gray-400 text-black">
             Óculos de Sol
           </a>
-          <a href="#" className="hover:text-blue-400 text-black">
+          <a href="#" className="hover:text-gray-400 text-black">
             Lentes de Contato
           </a>
-          <a href="#" className="hover:text-blue-400 text-black">
+          <a href="#" className="hover:text-gray-400 text-black">
             Acessórios
           </a>
         </nav>

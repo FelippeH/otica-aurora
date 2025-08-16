@@ -7,11 +7,12 @@ type Props = {
 
 export default function SideMenuButton({ openSidebar }: Props) {
   return (
+    // Botão para abrir o menu lateral
     <button
       onClick={openSidebar}
-      className="p-2 text-white rounded-md md:hidden"
+      className="p-2 text-black rounded-md md:hidden"
     >
-      <Menu size={28} />
+      <Menu size={32} />
     </button>
   );
 }
