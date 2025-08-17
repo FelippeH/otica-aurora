@@ -8,6 +8,8 @@ type SideMenuProps = {
 };
 
 export default function SideMenu({ isOpen, setIsOpen }: SideMenuProps) {
+  const closeMenu = () => setIsOpen(false);
+
   // Menu lateral para navegação mobile
   return (
     <>
@@ -28,7 +30,7 @@ export default function SideMenu({ isOpen, setIsOpen }: SideMenuProps) {
       >
         {/* Botão para fechar o sidebar */}
         <div className="flex justify-end p-5">
-          <button onClick={() => setIsOpen(false)} className="text-black">
+          <button onClick={closeMenu} className="text-black">
             <X size={32} />
           </button>
         </div>

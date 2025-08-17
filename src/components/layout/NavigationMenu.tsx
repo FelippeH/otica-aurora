@@ -5,6 +5,7 @@ import SideMenu from "../menu/SideMenu";
 import Image from "next/image";
 import Link from "next/link";
 import SideMenuButton from "../ui/SideMenuButton";
+import { Search } from "lucide-react";
 
 // Menu principal de navegação
 export default function NavBar() {
@@ -23,29 +24,38 @@ export default function NavBar() {
 
   return (
     <>
-      <header className="bg-navbar fixed w-full md:h-22 h-32 px-8 z-50 flex items-center justify-between">
-        {/* Botão do menu lateral: fixo à esquerda no mobile */}
-        <div className="absolute left-4 top-3">
-          <SideMenuButton openSidebar={() => setIsSidebarOpen(true)} />
+      <header className="bg-navbar fixed w-full h-32 px-8 z-50 grid grid-cols-3 items-center md:h-22">
+        {/* Botão do menu lateral: à esquerda */}
+        <div className="relative -top-7 -left-7 md:hidden">
+          <SideMenuButton
+            isOpen={isSidebarOpen}
+            toggleSideBar={() => setIsSidebarOpen(!isSidebarOpen)}
+          />
         </div>
 
         {/* Logotipo e seu posicionamento no menu de navegação */}
-        <div className="flex-1 flex justify-center -top-7 relative md:justify-start md:top-0">
-          <Link className="md:relative md:left-16" href="/">
+        <div className="flex relative -top-7 justify-center md:justify-start md:top-0 md:left-16">
+          <Link className="" href="/">
             <Image src="/logo.png" alt="Ótica Aurora" width={60} height={60} />
           </Link>
         </div>
 
         {/* Campo de busca */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-19 md:none md:flex md:justify-start md:items-center md:gap-16 md:top-auto">
-          <input
-            className="bg-white rounded-xl p-2 w-76 md:w-106"
-            type="text"
-            placeholder="O que você precisa hoje?"
-            value={termo}
-            onChange={(e) => setTermo(e.target.value)}
-            onKeyDown={handleKeyDown}
-          />
+        <div className="absolute left-1/2 -translate-x-1/2 top-19 md:flex md:justify-start md:items-center md:gap-16 md:top-auto">
+          <div className="relative w-80 md:w-106">
+            <input
+              className="bg-white rounded-[0.6rem] py-2 px-5 w-80 md:w-106"
+              type="text"
+              placeholder="O que você precisa hoje?"
+              value={termo}
+              onChange={(e) => setTermo(e.target.value)}
+              onKeyDown={handleKeyDown}
+            />
+            <Search
+              size={20}
+              className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400"
+            />
+          </div>
           {/* Área de atalhos de navegação */}
           <nav className="hidden md:whitespace-nowrap md:flex gap-7 text-m">
             <a href="#">Óculos de Grau</a>

@@ -1,18 +1,19 @@
 "use client";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 type Props = {
-  openSidebar: () => void;
+  isOpen: boolean;
+  toggleSideBar: () => void;
 };
 
-export default function SideMenuButton({ openSidebar }: Props) {
+export default function SideMenuButton({ isOpen, toggleSideBar }: Props) {
   return (
     // Botão para abrir o menu lateral
     <button
-      onClick={openSidebar}
-      className="p-2 text-black rounded-md md:hidden"
+      onClick={toggleSideBar}
+      className="p-5 text-black rounded-md md:hidden"
     >
-      <Menu size={32} />
+      {isOpen ? <X size={32} /> : <Menu size={32} />}
     </button>
   );
 }
