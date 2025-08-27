@@ -3,7 +3,7 @@ import { Package, CreditCard, ThumbsUp, ArrowRightLeft } from "lucide-react";
 export default function Info() {
   return (
     <section className="bg-[#949186] py-2 md:py-4">
-      <div className="flex flex-row overflow-x-auto px-6 gap-6 md:justify-center md:gap-12">
+      <div className="flex flex-row overflow-x-auto px-6 gap-6 md:justify-center md:gap-16">
         {/* organiza os textos na horizontal */}
         {/* carrosel de informações */}
 

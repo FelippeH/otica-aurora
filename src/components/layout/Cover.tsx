@@ -37,7 +37,7 @@ export default function Cover() {
             src={slide.image}
             alt={`Slide ${index}`}
             fill
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full mt-[40px]"
             priority={index === 0}
           />
         </div>
