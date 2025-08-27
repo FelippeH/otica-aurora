@@ -7,6 +7,7 @@ import ProductCard from "@/components/layout/ProductCard";
 export default function ProductCarousel({ products }: { products: Product[] }) {
   const [isMobile, setIsMobile] = useState(false);
 
+  // checa se o dispositivo é móvel
   useEffect(() => {
     const updateItems = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -20,6 +21,7 @@ export default function ProductCarousel({ products }: { products: Product[] }) {
     };
   }, []);
 
+  // Renderiza os produtos em um layout de grade
   if (!isMobile) {
     return (
       <div className="grid grid-cols-4 gap-6 mx-50">
