@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Produto A",
+    "price": 99.9,
+    "images": ["/products/glasses01.png", "/products/glasses01_1.png"]
+  },
+  {
+    "id": 2,
+    "title": "Produto B",
+    "price": 159.9,
+    "images": ["/products/glasses02.png", "/products/glasses02_1.png"]
+  },
+  {
+    "id": 3,
+    "title": "Produto C",
+    "price": 199.9,
+    "images": ["/products/glasses03.png", "/products/glasses03_1.png"]
+  },
+  {
+    "id": 4,
+    "title": "Produto D",
+    "price": 249.9,
+    "images": ["/products/glasses04.png", "/products/glasses04_1.png"]
+  },
+  {
+    "id": 5,
+    "title": "Produto E",
+    "price": 559.9,
+    "images": ["/products/glasses05.png", "/products/glasses05_1.png"]
+  },
+  {
+    "id": 6,
+    "title": "Produto F",
+    "price": 109.9,
+    "images": ["/products/glasses06.png", "/products/glasses06_1.png"]
+  },
+  {
+    "id": 7,
+    "title": "Produto G",
+    "price": 209.9,
+    "images": ["/products/glasses07.png", "/products/glasses07_1.png"]
+  },
+  {
+    "id": 8,
+    "title": "Produto H",
+    "price": 269.9,
+    "images": ["/products/glasses08.png", "/products/glasses08_1.png"]
+  }
+]
