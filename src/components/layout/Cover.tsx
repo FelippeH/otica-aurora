@@ -25,7 +25,7 @@ export default function Cover() {
   }, []);
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+    <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden cursor-pointer">
       {slides.map((slide, index) => (
         <div
           key={index}
