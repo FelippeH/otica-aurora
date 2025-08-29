@@ -17,7 +17,15 @@ export default async function HomePage() {
   return (
     // Renderiza os produtos em um layout de grade
     <main className="">
-      <ProductCarousel products={products} />
+      <p className="md:text-[1.6rem] md:-mt-6 md:mb-8 -mt-14 text-[1.1rem] font-bold mb-6 text-center">
+        APROVEITE ARMAÇÕES COM ATÉ 35% DE DESCONTO
+      </p>
+      <ProductCarousel products={products} category="glasses" />
+
+      <p className="md:text-[1.6rem] md:mt-20 mt-8 text-[1.1rem] font-bold mb-6 text-center">
+        AS MELHORES OPÇÕES EM ÓCULOS SOL
+      </p>
+      <ProductCarousel products={products} category="sunglass" />
     </main>
   );
 }
