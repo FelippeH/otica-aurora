@@ -58,16 +58,16 @@ export default function NavBar() {
           </div>
           {/* Área de atalhos de navegação */}
           <nav className="hidden text-black md:whitespace-nowrap md:flex gap-7 text-m">
-            <a href="#" className="hover:text-gray-400">
+            <a href="oculos-grau" className="hover:text-gray-400">
               Óculos de Grau
             </a>
-            <a href="#" className="hover:text-gray-400">
+            <a href="oculos-sol" className="hover:text-gray-400">
               Óculos de Sol
             </a>
-            <a href="#" className="hover:text-gray-400">
+            <a href="lentes-contato" className="hover:text-gray-400">
               Lentes de Contato
             </a>
-            <a href="#" className="hover:text-gray-400">
+            <a href="acessorios" className="hover:text-gray-400">
               Acessórios
             </a>
           </nav>
