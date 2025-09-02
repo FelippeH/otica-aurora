@@ -6,6 +6,15 @@ import Image from "next/image";
 import Link from "next/link";
 import SideMenuButton from "../ui/SideMenuButton";
 import { Search } from "lucide-react";
+import { UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+} from "@clerk/nextjs";
 
 // Menu principal de navegação
 export default function NavBar() {
@@ -71,6 +80,19 @@ export default function NavBar() {
               Acessórios
             </Link>
           </nav>
+
+          <div className="flex justify-end items-center">
+            <SignedIn>
+              <UserButton afterSignOutUrl="/" />
+            </SignedIn>
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button className="bg-blue-600 text-white ml-auto px-4 py-2 rounded hover:bg-blue-700">
+                  Entrar
+                </button>
+              </SignInButton>
+            </SignedOut>
+          </div>
         </div>
       </header>
 
