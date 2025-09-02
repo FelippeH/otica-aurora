@@ -37,7 +37,7 @@ export default function ProductCarousel({
   // Renderiza os produtos em um layout de grade
   if (!isMobile) {
     return (
-      <div className="grid md:grid-cols-4 gap-6 mx-50">
+      <div className="grid md:grid-cols-4 gap-7 mx-70">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -46,7 +46,7 @@ export default function ProductCarousel({
   }
 
   return (
-    <div className="flex gap-6 overflow-x-auto px-3 snap-x snap-mandatory">
+    <div className="flex gap-7 overflow-x-auto px-3 snap-x snap-mandatory">
       {filteredProducts.map((product) => (
         <div key={product.id} className="w-[78%] snap-start flex-shrink-0">
           <ProductCard product={product} />

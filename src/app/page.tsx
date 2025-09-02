@@ -23,11 +23,11 @@ export default async function HomePage() {
       <Info />
 
       <div className="mx-6">
-        <p className="md:text-[1.6rem] md:mt-8 md:mb-8 mt-8 text-[1.1rem] font-bold mb-6 text-center">
+        <p className="md:text-[1.4rem] md:mt-8 md:mb-8 mt-8 text-[1.1rem] font-bold mb-6 text-center">
           APROVEITE ARMAÇÕES COM ATÉ 35% DE DESCONTO
         </p>
         <ProductCarousel products={products} category="glasses" />
-        <p className="md:text-[1.6rem] md:mt-20 mt-8 text-[1.1rem] font-bold mb-6 text-center">
+        <p className="md:text-[1.4rem] md:mt-8 mt-8 text-[1.1rem] font-bold mb-6 text-center">
           AS MELHORES OPÇÕES EM ÓCULOS SOL
         </p>
         <ProductCarousel products={products} category="sunglass" />
