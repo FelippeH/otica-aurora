@@ -9,12 +9,7 @@ import { Search } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-} from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 // Menu principal de navegação
 export default function NavBar() {
@@ -35,7 +30,7 @@ export default function NavBar() {
     <>
       <header className="bg-navbar fixed w-full h-32 px-8 z-50 grid grid-cols-3 items-center md:h-22">
         {/* Botão do menu lateral: à esquerda */}
-        <div className="relative -top-7 -left-7 md:hidden">
+        <div className="relative -top-7 -left-6 md:hidden">
           <SideMenuButton
             isOpen={isSidebarOpen}
             toggleSideBar={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -43,7 +38,7 @@ export default function NavBar() {
         </div>
 
         {/* Logotipo e seu posicionamento no menu de navegação */}
-        <div className="flex relative -top-7 justify-center md:justify-start md:top-0 md:left-16">
+        <div className="flex relative -top-[3.5vh] justify-center md:justify-start md:top-0 md:left-16">
           <Link className="" href="/">
             <Image src="/logo.png" alt="Ótica Aurora" width={60} height={60} />
           </Link>
@@ -51,9 +46,9 @@ export default function NavBar() {
 
         {/* Campo de busca */}
         <div className="absolute left-1/2 -translate-x-1/2 top-19 md:flex md:justify-start md:items-center md:gap-16 md:top-auto">
-          <div className="relative w-80 md:w-106">
+          <div className="relative">
             <input
-              className="bg-white rounded-[0.6rem] py-2 px-5 w-80 md:w-106"
+              className="bg-white rounded-[0.6rem] py-2 px-5 w-90 md:w-106"
               type="text"
               placeholder="O que você precisa hoje?"
               value={termo}
@@ -81,7 +76,7 @@ export default function NavBar() {
             </Link>
           </nav>
 
-          <div className="flex justify-end items-center">
+          <div className="flex relative justify-end md:items-center md:mt-0 -mt-[13vh]">
             <SignedIn>
               <UserButton afterSignOutUrl="/" />
             </SignedIn>
