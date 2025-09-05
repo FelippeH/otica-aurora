@@ -24,8 +24,8 @@ A aplicação permite que usuários naveguem por produtos, adicionem itens ao ca
 ### 🖧 Back-end
 - [Node JS](https://nodejs.org/pt) - Ambiente de execução JavaScript assíncrono, utilizado para construção do back-end.
 - [Prisma ORM](https://www.prisma.io/) - ORM para comunicação com o banco de dados.
-- [Supabase (PostgreSQL)](https://supabase.com/) - Banco de dados relacional (PostgreSQL) hospedado e gerenciado, usado como fonte de dados principal no projeto.
-- [Stripe]() - plataforma global de pagamentos que permite empresas e desenvolvedores receberem dinheiro pela internet.
+- [Vercel - Neon (PostgreSQL)](https://vercel.com/) - Banco de dados relacional (PostgreSQL) hospedado e gerenciado, usado como fonte de dados principal no projeto.
+- [Stripe](https://stripe.com/br) - plataforma global de pagamentos que permite empresas e desenvolvedores receberem dinheiro pela internet.
 - [Axios](https://axios-http.com/) - Cliente HTTP baseado em Promises para fazer requisições entre front-end e back-end.
 - [Slugify](https://slugify.online/) - Biblioteca utilizada para transformar nomes ou títulos em slugs legíveis por URL, substituindo identificadores numéricos ou aleatórios.
 ### 💻 Outras ferramentas
