@@ -7,8 +7,6 @@ import Link from "next/link";
 import SideMenuButton from "../ui/SideMenuButton";
 import { Search } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 // Menu principal de navegação
