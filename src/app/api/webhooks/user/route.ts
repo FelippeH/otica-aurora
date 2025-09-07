@@ -1,7 +1,7 @@
-import prisma from "@/lib/prisma";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { Webhook, WebhookRequiredHeaders } from "svix";
+import { getPrisma } from "@/lib/getPrisma";
 
 const webhookSecret = process.env.CLERK_WEBHOOK_SECRET || "";
 
@@ -28,6 +28,8 @@ type EmailAddressType = {
 };
 
 async function handler(req: Request) {
+  const prisma = await getPrisma();
+
   const payload = await req.text();
   const headerList = await headers();
 
