@@ -4,11 +4,13 @@ import { Product } from "@/types/ProductType";
 import { useEffect, useState } from "react";
 import ProductCard from "@/components/layout/ProductCard";
 
+// Define as props do componente
 interface ProductCarouselProps {
   products: Product[];
   category?: string;
 }
 
+// Componente principal do carrossel de produtos
 export default function ProductCarousel({
   products,
   category,
@@ -20,10 +22,11 @@ export default function ProductCarousel({
     const updateItems = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
+    // Inicializa o estado com base no tamanho da janela
     updateItems();
     window.addEventListener("resize", updateItems);
 
+    // Limpa o listener ao desmontar o componente
     return () => {
       window.removeEventListener("resize", updateItems);
     };
@@ -45,6 +48,7 @@ export default function ProductCarousel({
     );
   }
 
+  // Renderiza os produtos em um carrossel para dispositivos móveis
   return (
     <div className="flex gap-7 overflow-x-auto px-3 snap-x snap-mandatory">
       {filteredProducts.map((product) => (

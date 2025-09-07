@@ -10,9 +10,12 @@ async function getProducts(): Promise<Product[]> {
     apiVersion: "2025-08-27.basil",
   });
 
+  // Lista os produtos e expande o preço padrão
   const products = await stripe.products.list({
     expand: ["data.default_price"],
   });
+
+  // Formata os produtos para o tipo Product
   const formattedProducts: Product[] = products.data.map((product) => {
     const price = product.default_price as Stripe.Price;
 
@@ -29,6 +32,7 @@ async function getProducts(): Promise<Product[]> {
   return formattedProducts;
 }
 
+// Componente principal da página inicial
 export default async function HomePage() {
   const products = await getProducts();
 
@@ -37,12 +41,14 @@ export default async function HomePage() {
     <main className="">
       <Cover />
       <Info />
-
-      <div className="mx-6">
+      {/* Carrossel de produtos para a categoria "óculos" */}
+      <div className="mx-6 pb-10">
         <p className="md:text-[1.4rem] md:mt-8 md:mb-8 mt-8 text-[1.1rem] font-bold mb-6 text-center">
           APROVEITE ARMAÇÕES COM ATÉ 35% DE DESCONTO
         </p>
         <ProductCarousel products={products} category="glasses" />
+
+        {/* Carrossel de produtos para a categoria "óculos de sol" */}
         <p className="md:text-[1.4rem] md:mt-8 mt-8 text-[1.1rem] font-bold mb-6 text-center">
           AS MELHORES OPÇÕES EM ÓCULOS SOL
         </p>
