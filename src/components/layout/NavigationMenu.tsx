@@ -28,7 +28,7 @@ export default function NavBar() {
     <>
       <header className="bg-navbar fixed w-full h-32 px-8 z-50 grid grid-cols-3 items-center md:h-22">
         {/* Botão do menu lateral: à esquerda */}
-        <div className="relative -top-7 -left-6 md:hidden">
+        <div className="relative -top-[3.75vh] -left-7 md:hidden">
           <SideMenuButton
             isOpen={isSidebarOpen}
             toggleSideBar={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -36,7 +36,7 @@ export default function NavBar() {
         </div>
 
         {/* Logotipo e seu posicionamento no menu de navegação */}
-        <div className="flex relative -top-[3.5vh] justify-center md:justify-start md:top-0 md:left-16">
+        <div className="flex relative -top-[3.75vh] justify-center md:justify-start md:top-0 md:left-16">
           <Link className="" href="/">
             <Image src="/logo.png" alt="Ótica Aurora" width={60} height={60} />
           </Link>
@@ -80,7 +80,7 @@ export default function NavBar() {
             </SignedIn>
             <SignedOut>
               <SignInButton mode="modal">
-                <button className="bg-blue-600 text-white ml-auto px-4 py-2 rounded hover:bg-blue-700">
+                <button className="bg-blue-600 text-white relative -top-[11px] md:top-0 px-4 py-[8px] rounded hover:bg-blue-700">
                   Entrar
                 </button>
               </SignInButton>
