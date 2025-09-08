@@ -3,6 +3,7 @@ import Cover from "@/components/layout/Cover";
 import Info from "@/components/layout/Info";
 import { Product } from "@/types/ProductType";
 import { Stripe } from "stripe";
+import Image from "next/image";
 
 // Função para buscar produtos da API
 async function getProducts(): Promise<Product[]> {
@@ -42,11 +43,20 @@ export default async function HomePage() {
       <Cover />
       <Info />
       {/* Carrossel de produtos para a categoria "óculos" */}
-      <div className="mx-6 pb-10">
+      <div className="pb-10">
         <p className="md:text-[1.4rem] md:mt-8 md:mb-8 mt-8 text-[1.1rem] font-bold mb-6 text-center">
           APROVEITE ARMAÇÕES COM ATÉ 35% DE DESCONTO
         </p>
         <ProductCarousel products={products} category="glasses" />
+
+        {/* Banner promocional */}
+        <Image
+          src="/promo01.jpg"
+          alt="Banner"
+          width={1200}
+          height={300}
+          className="mx-auto md:w-[70vw] mt-10 rounded-lg cursor-pointer"
+        />
 
         {/* Carrossel de produtos para a categoria "óculos de sol" */}
         <p className="md:text-[1.4rem] md:mt-8 mt-8 text-[1.1rem] font-bold mb-6 text-center">
